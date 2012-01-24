@@ -9,17 +9,20 @@
 		Ylo		EQU	0x20
 		RESULT	EQU	0x30
 		
-START	MOVLW	0x02
+START	
+		CALL	LOAD
+		CALL	COMPHI
+		BRA		$
+
+;------load x and y values
+LOAD	MOVLW	0x01
 		MOVWF	Xlo
-		MOVLW	0x20
+		MOVLW	0x10
 		MOVWF	Xhi
-		
 		MOVLW	0x02
 		MOVWF	Ylo
 		MOVLW	0x20
 		MOVWF	Yhi
-		CALL	COMPHI
-
 
 ;------are high bytes equal
 COMPHI	MOVF	Xhi, W
