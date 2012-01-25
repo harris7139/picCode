@@ -1,3 +1,7 @@
+;------Basic Subroutines
+;------This source file compares two values (X and Y) and determines which is greater.
+;------Created by Ben Harris at Thaddeus Stevens College of Technology
+
 		#include <p18f452.inc>
 		
 		org		0x00
@@ -8,7 +12,8 @@
 		Yhi		EQU	0x21
 		Ylo		EQU	0x20
 		RESULT	EQU	0x30
-		
+
+;------Main Program		
 START	
 		CALL	LOAD
 		CALL	COMPHI
